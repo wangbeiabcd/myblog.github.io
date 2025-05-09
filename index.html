@@ -1,23 +1,898 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
 
-{% block title %}{{ config.title }}{% if theme.index_with_subtitle and config.subtitle %} - {{config.subtitle }}{% endif %}{% endblock %}
 
-{% block page_class %}
-  {% if is_home() %}page-home{% endif -%}
-{% endblock %}
 
-{% block content %}
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Hello World">
+<meta property="og:type" content="website">
+<meta property="og:title" content="wangbei Blog">
+<meta property="og:url" content="index.html">
+<meta property="og:site_name" content="wangbei Blog">
+<meta property="og:description" content="Hello World">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Wang Bei">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http:/wangbeiabcd.github.io/myblog.github.io/"/>
+
+
+
+
+
+  <title>wangbei Blog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/myblog.github.io/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">wangbei Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
   <section id="posts" class="posts-expand">
-    {% for post in page.posts %}
-      {{ post_template.render(post, true) }}
-    {% endfor %}
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http:/wangbeiabcd.github.io/myblog.github.io2025/05/09/六月学习笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wangbei Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="2025/05/09/六月学习笔记/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2025-05-09T15:14:30+08:00">
+                2025-05-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="六月学习笔记"><a href="#六月学习笔记" class="headerlink" title="六月学习笔记"></a>六月学习笔记</h1><p>[TOC]</p>
+<h2 id="一、常用命令"><a href="#一、常用命令" class="headerlink" title="一、常用命令"></a>一、常用命令</h2><h3 id="1、rosbag"><a href="#1、rosbag" class="headerlink" title="1、rosbag"></a>1、rosbag</h3><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#录制所有话题</span><br><span class="line">ros2 bag record -a</span><br><span class="line">#录制选定话题</span><br><span class="line">ros2 bag record /topic</span><br><span class="line">#自定义输出文件的名字</span><br><span class="line">ros2 bag record -o file-name topic-name</span><br><span class="line">#查看包的话题</span><br><span class="line">ros2 bag info 包.db3</span><br><span class="line">#滤除建图时的话题</span><br><span class="line">ros2 bag filter 包<span class="number">1</span>.bag 包<span class="number">2</span>.bag &quot;topic != &#x27;/tf&#x27; or (topic == &#x27;tf&#x27; and m.transforms[<span class="number">0</span>].header.frame_id != &#x27;map&#x27;)&quot;</span><br><span class="line">#以<span class="number">30</span>倍速回放</span><br><span class="line">ros2 bag play -r <span class="number">30</span> record.bag</span><br><span class="line">#将数据转换为 csv 格式，输出到xxx.db3同级目录</span><br><span class="line">ros2bag-<span class="built_in">convert</span> xxxx.db3</span><br><span class="line"></span><br><span class="line">rosbags-<span class="built_in">convert</span> bag1.bag</span><br><span class="line">rosbags-<span class="built_in">convert</span> bag2_folder</span><br><span class="line">#注：录制时ctrlc终止录制，回放时空格键为暂停</span><br></pre></td></tr></table></figure>
+
+<h3 id="2、保存地图"><a href="#2、保存地图" class="headerlink" title="2、保存地图"></a>2、保存地图</h3><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ros2 run nav2_map_server map_saver_cli -t map -f 地图名称	</span><br></pre></td></tr></table></figure>
+
+<h3 id="3、解压deb包"><a href="#3、解压deb包" class="headerlink" title="3、解压deb包"></a>3、解压deb包</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i xxx.deb</span><br></pre></td></tr></table></figure>
+
+<h3 id="4、科学上网"><a href="#4、科学上网" class="headerlink" title="4、科学上网"></a>4、科学上网</h3><p><a target="_blank" rel="noopener" href="https://www.ip138.com/">https://www.ip138.com/</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /etc/hosts</span><br></pre></td></tr></table></figure>
+
+<h2 id="5、编译"><a href="#5、编译" class="headerlink" title="5、编译"></a>5、编译</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">colcon build</span><br><span class="line">colcon build --packages-select YOUR_PKG_NAME</span><br><span class="line">colcon build --symlink-install</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="二、cartographer建图"><a href="#二、cartographer建图" class="headerlink" title="二、cartographer建图"></a>二、cartographer建图</h2><h3 id="1、雷达2d建图"><a href="#1、雷达2d建图" class="headerlink" title="1、雷达2d建图"></a>1、雷达2d建图</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// revo._lds.lua</span></span><br><span class="line">map_frame = <span class="string">&quot;map&quot;</span>,</span><br><span class="line">tracking_frame = <span class="string">&quot;imu&quot;</span>,</span><br><span class="line">published_frame = <span class="string">&quot;base_link&quot;</span>,</span><br><span class="line">odom_frame = <span class="string">&quot;raw_odom&quot;</span>,</span><br><span class="line">provide_odom_frame = <span class="literal">true</span>,</span><br><span class="line">num_laser_scans = <span class="number">1</span>,</span><br><span class="line">  </span><br><span class="line">TRAJECTORY_BUILDER_2D.submaps.num_range_data = <span class="number">35</span></span><br><span class="line">TRAJECTORY_BUILDER_2D.min_range = <span class="number">0.1</span></span><br><span class="line">TRAJECTORY_BUILDER_2D.max_range = <span class="number">12</span></span><br><span class="line">TRAJECTORY_BUILDER_2D.missing_data_ray_length = <span class="number">3</span></span><br><span class="line">TRAJECTORY_BUILDER_2D.use_imu_data = <span class="literal">true</span></span><br><span class="line">TRAJECTORY_BUILDER_2D.use_online_correlative_scan_matching = <span class="literal">true</span></span><br><span class="line">TRAJECTORY_BUILDER_2D.real_time_correlative_scan_matcher.linear_search_window = <span class="number">0.1</span></span><br><span class="line">TRAJECTORY_BUILDER_2D.real_time_correlative_scan_matcher.translation_delta_cost_weight = <span class="number">10.</span></span><br><span class="line">TRAJECTORY_BUILDER_2D.real_time_correlative_scan_matcher.rotation_delta_cost_weight = <span class="number">1e-1</span></span><br><span class="line">TRAJECTORY_BUILDER_2D.motion_filter.max_angle_radians=math.<span class="built_in">rad</span>(<span class="number">0.1</span>)</span><br><span class="line"></span><br><span class="line">TRAJECTORY_BUILDER_2D.voxel_filter_size = <span class="number">0.02</span></span><br><span class="line">TRAJECTORY_BUILDER_2D.ceres_scan_matcher.occupied_space_weight = <span class="number">10</span></span><br><span class="line">TRAJECTORY_BUILDER_2D.ceres_scan_matcher.translation_weight = <span class="number">1</span></span><br><span class="line">TRAJECTORY_BUILDER_2D.ceres_scan_matcher.rotation_weight = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">POSE_GRAPH.optimization_problem.huber_scale = <span class="number">1e2</span></span><br><span class="line">POSE_GRAPH.optimize_every_n_nodes = <span class="number">70</span></span><br><span class="line">POSE_GRAPH.constraint_builder.min_score = <span class="number">0.65</span></span><br><span class="line">POSE_GRAPH.constraint_builder.global_localization_min_score = <span class="number">0.7</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//demo_revo_lds.launch.py</span></span><br><span class="line">remappings = [(<span class="string">&#x27;scan&#x27;</span>,<span class="string">&#x27;laser_scan&#x27;</span>)],</span><br></pre></td></tr></table></figure>
+
+<h3 id="2、深度相机点云2d建图"><a href="#2、深度相机点云2d建图" class="headerlink" title="2、深度相机点云2d建图"></a>2、深度相机点云2d建图</h3><h4 id="参数配置"><a href="#参数配置" class="headerlink" title="参数配置"></a>参数配置</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//demo_revo_lds_cloud.launch.py </span></span><br><span class="line">remappings = [</span><br><span class="line">        (<span class="string">&#x27;/points2_1&#x27;</span>, <span class="string">&#x27;/front_tof_spot_sensor/points&#x27;</span>),</span><br><span class="line">        (<span class="string">&#x27;/points2_2&#x27;</span>, <span class="string">&#x27;/back_tof_spot_sensor/points&#x27;</span>),</span><br><span class="line">        (<span class="string">&#x27;/odom&#x27;</span>,<span class="string">&#x27;/raw_odom&#x27;</span>)</span><br><span class="line">        ],</span><br></pre></td></tr></table></figure>
+
+<h4 id="产生问题"><a href="#产生问题" class="headerlink" title="产生问题"></a>产生问题</h4><h5 id="（1）点云和相机画面方向不匹配"><a href="#（1）点云和相机画面方向不匹配" class="headerlink" title="（1）点云和相机画面方向不匹配"></a>（1）点云和相机画面方向不匹配</h5><p>解决方法：launch文件中加入tf2的坐标变换 static_transform_publisher</p>
+<p>或者msg_conversion中强制修改坐标系方向</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">static_transform_publisher_node1 = <span class="built_in">Node</span>(</span><br><span class="line">    package=<span class="string">&#x27;tf2_ros&#x27;</span>,</span><br><span class="line">    executable=<span class="string">&#x27;static_transform_publisher&#x27;</span>,</span><br><span class="line">    arguments=[<span class="string">&#x27;0.1760&#x27;</span>, <span class="string">&#x27;0.0264&#x27;</span>, <span class="string">&#x27;0.05441&#x27;</span>, <span class="string">&#x27;-1.57&#x27;</span>, <span class="string">&#x27;0&#x27;</span>, <span class="string">&#x27;-1.57&#x27;</span>, <span class="string">&#x27;base_link&#x27;</span>, <span class="string">&#x27;front_tof_flood_link&#x27;</span>])</span><br><span class="line">static_transform_publisher_node2 = <span class="built_in">Node</span>(</span><br><span class="line">    package=<span class="string">&#x27;tf2_ros&#x27;</span>,</span><br><span class="line">    executable=<span class="string">&#x27;static_transform_publisher&#x27;</span>,</span><br><span class="line">    arguments=[<span class="string">&#x27;0.1760&#x27;</span>, <span class="string">&#x27;0.0264&#x27;</span>, <span class="string">&#x27;0.05441&#x27;</span>, <span class="string">&#x27;-1.57&#x27;</span>, <span class="string">&#x27;0&#x27;</span>, <span class="string">&#x27;-1.57&#x27;</span>, <span class="string">&#x27;base_link&#x27;</span>, <span class="string">&#x27;front_tof_spot_link&#x27;</span>])</span><br><span class="line">static_transform_publisher_node3 = <span class="built_in">Node</span>(</span><br><span class="line">    package=<span class="string">&#x27;tf2_ros&#x27;</span>,</span><br><span class="line">    executable=<span class="string">&#x27;static_transform_publisher&#x27;</span>,  </span><br><span class="line">    arguments=[<span class="string">&#x27;-0.1760&#x27;</span>, <span class="string">&#x27;0.0264&#x27;</span>, <span class="string">&#x27;0.05441&#x27;</span>, <span class="string">&#x27;1.57&#x27;</span>, <span class="string">&#x27;0&#x27;</span>, <span class="string">&#x27;-1.57&#x27;</span>, <span class="string">&#x27;base_link&#x27;</span>, <span class="string">&#x27;back_tof_flood_link&#x27;</span>])</span><br><span class="line">static_transform_publisher_node4 = <span class="built_in">Node</span>(</span><br><span class="line">    package=<span class="string">&#x27;tf2_ros&#x27;</span>,</span><br><span class="line">    executable=<span class="string">&#x27;static_transform_publisher&#x27;</span>,</span><br><span class="line">    arguments=[<span class="string">&#x27;-0.1760&#x27;</span>, <span class="string">&#x27;0.0264&#x27;</span>, <span class="string">&#x27;0.05441&#x27;</span>, <span class="string">&#x27;1.57&#x27;</span>, <span class="string">&#x27;0&#x27;</span>, <span class="string">&#x27;-1.57&#x27;</span>, <span class="string">&#x27;base_link&#x27;</span>, <span class="string">&#x27;back_tof_spot_link&#x27;</span>])</span><br></pre></td></tr></table></figure>
+
+<h5 id="（2）点云数据为空"><a href="#（2）点云数据为空" class="headerlink" title="（2）点云数据为空"></a>（2）点云数据为空</h5><p>![](&#x2F;home&#x2F;wangbei&#x2F;图片&#x2F;截图&#x2F;截图 2024-06-05 14-31-24.png)</p>
+<p>解决方法：</p>
+<p>fov角错误 spot模式100°*15°，flood模式100°*45°</p>
+<p>调整max_range的值</p>
+<h5 id="（3）建图开始时为黑色"><a href="#（3）建图开始时为黑色" class="headerlink" title="（3）建图开始时为黑色"></a>（3）建图开始时为黑色</h5><p>解决方法：调整min_z值</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">TRAJECTORY_BUILDER_2D.min_z = <span class="number">0.02</span></span><br><span class="line">TRAJECTORY_BUILDER_2D.max_z = <span class="number">5</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="（4）range-data-collator-filling-buffer，但却能建出来地图"><a href="#（4）range-data-collator-filling-buffer，但却能建出来地图" class="headerlink" title="（4）range data collator filling buffer，但却能建出来地图"></a>（4）range data collator filling buffer，但却能建出来地图</h5><p>情况属于正常，打印了时间同步前后的数据，第一个传感器传入同步为0，第二个传感器传入同步有数据，合理，将LOG注释</p>
+<h5 id="（5）仿真建图坐标系抖动漂移，瞬移到一个位置再回来，导致图像重叠"><a href="#（5）仿真建图坐标系抖动漂移，瞬移到一个位置再回来，导致图像重叠" class="headerlink" title="（5）仿真建图坐标系抖动漂移，瞬移到一个位置再回来，导致图像重叠"></a>（5）仿真建图坐标系抖动漂移，瞬移到一个位置再回来，导致图像重叠</h5><p>开始调参 速度：线速度0.3 角速度0.5</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1、关闭了回环检测，旋转权重1e1，平移权重1e5 可以建出地图</span></span><br><span class="line">POSE_GRAPH.constraint_builder.max_constraint_distance=<span class="number">0</span></span><br><span class="line"><span class="comment">//2、加入了小车的odom坐标系，可以大速度进行建图</span></span><br><span class="line">  published_frame = <span class="string">&quot;odom&quot;</span>,</span><br><span class="line">  odom_frame = <span class="string">&quot;odom&quot;</span>,</span><br><span class="line">  provide_odom_frame = <span class="literal">false</span>,</span><br><span class="line"><span class="comment">//3、打开了小车的odom，回环检测可以调整了</span></span><br><span class="line">POSE_GRAPH.constraint_builder.max_constraint_distance=<span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">include <span class="string">&quot;map_builder.lua&quot;</span></span><br><span class="line">include <span class="string">&quot;trajectory_builder.lua&quot;</span></span><br><span class="line"></span><br><span class="line">options = &#123;</span><br><span class="line">  map_builder = MAP_BUILDER,</span><br><span class="line">  trajectory_builder = TRAJECTORY_BUILDER,</span><br><span class="line">  map_frame = <span class="string">&quot;map&quot;</span>,</span><br><span class="line">  tracking_frame = <span class="string">&quot;imu&quot;</span>,</span><br><span class="line">  published_frame = <span class="string">&quot;odom&quot;</span>,</span><br><span class="line">  odom_frame = <span class="string">&quot;odom&quot;</span>,</span><br><span class="line">  provide_odom_frame = <span class="literal">false</span>,</span><br><span class="line">  publish_frame_projected_to_2d = <span class="literal">false</span>,</span><br><span class="line">  use_pose_extrapolator = <span class="literal">true</span>,</span><br><span class="line">  use_odometry = <span class="literal">true</span>,</span><br><span class="line">  use_nav_sat = <span class="literal">false</span>,</span><br><span class="line">  use_landmarks = <span class="literal">false</span>,</span><br><span class="line">  num_laser_scans = <span class="number">0</span>,</span><br><span class="line">  num_multi_echo_laser_scans = <span class="number">0</span>,</span><br><span class="line">  num_subdivisions_per_laser_scan = <span class="number">1</span>,</span><br><span class="line">  num_point_clouds = <span class="number">2</span>,</span><br><span class="line">  lookup_transform_timeout_sec = <span class="number">0.2</span>,</span><br><span class="line">  submap_publish_period_sec = <span class="number">0.3</span>,</span><br><span class="line">  pose_publish_period_sec = <span class="number">5e-3</span>,</span><br><span class="line">  trajectory_publish_period_sec = <span class="number">30e-3</span>,</span><br><span class="line">  rangefinder_sampling_ratio = <span class="number">1.</span>,</span><br><span class="line">  odometry_sampling_ratio = <span class="number">1.</span>,</span><br><span class="line">  fixed_frame_pose_sampling_ratio = <span class="number">1.</span>,</span><br><span class="line">  imu_sampling_ratio = <span class="number">1.</span>,</span><br><span class="line">  landmarks_sampling_ratio = <span class="number">1.</span>,</span><br><span class="line">  publish_tracked_pose = <span class="literal">true</span></span><br><span class="line">&#125;</span><br><span class="line">MAP_BUILDER.use_trajectory_builder_2d = <span class="literal">true</span></span><br><span class="line">TRAJECTORY_BUILDER_2D.submaps.grid_options_2d.resolution = <span class="number">0.05</span></span><br><span class="line"></span><br><span class="line">TRAJECTORY_BUILDER_2D.submaps.num_range_data = <span class="number">30</span></span><br><span class="line">TRAJECTORY_BUILDER_2D.num_accumulated_range_data = <span class="number">2</span></span><br><span class="line"></span><br><span class="line">TRAJECTORY_BUILDER_2D.min_range = <span class="number">0.2</span></span><br><span class="line">TRAJECTORY_BUILDER_2D.max_range = <span class="number">7.9</span></span><br><span class="line">TRAJECTORY_BUILDER_2D.min_z = <span class="number">0.2</span></span><br><span class="line">TRAJECTORY_BUILDER_2D.max_z = <span class="number">1.25</span></span><br><span class="line">TRAJECTORY_BUILDER_2D.missing_data_ray_length = <span class="number">1</span></span><br><span class="line">TRAJECTORY_BUILDER_2D.use_imu_data = <span class="literal">false</span></span><br><span class="line">TRAJECTORY_BUILDER_2D.voxel_filter_size = <span class="number">0.025</span></span><br><span class="line"></span><br><span class="line">TRAJECTORY_BUILDER_2D.use_online_correlative_scan_matching = <span class="literal">true</span></span><br><span class="line">TRAJECTORY_BUILDER_2D.real_time_correlative_scan_matcher.linear_search_window = <span class="number">0.5</span></span><br><span class="line">TRAJECTORY_BUILDER_2D.real_time_correlative_scan_matcher.angular_search_window = math.<span class="built_in">rad</span>(<span class="number">25</span>)</span><br><span class="line">TRAJECTORY_BUILDER_2D.real_time_correlative_scan_matcher.translation_delta_cost_weight = <span class="number">1e5</span></span><br><span class="line">TRAJECTORY_BUILDER_2D.real_time_correlative_scan_matcher.rotation_delta_cost_weight = <span class="number">1e1</span></span><br><span class="line"></span><br><span class="line">TRAJECTORY_BUILDER_2D.motion_filter.max_angle_radians=math.<span class="built_in">rad</span>(<span class="number">0.2</span>)</span><br><span class="line">TRAJECTORY_BUILDER_2D.motion_filter.max_distance_meters = <span class="number">0.1</span></span><br><span class="line"></span><br><span class="line">POSE_GRAPH.optimize_every_n_nodes = <span class="number">60</span></span><br><span class="line">POSE_GRAPH.optimization_problem.huber_scale = <span class="number">1e2</span></span><br><span class="line">POSE_GRAPH.constraint_builder.max_constraint_distance = <span class="number">2.5</span></span><br><span class="line">POSE_GRAPH.constraint_builder.min_score = <span class="number">0.65</span></span><br><span class="line">POSE_GRAPH.constraint_builder.global_localization_min_score = <span class="number">0.7</span></span><br><span class="line">POSE_GRAPH.optimization_problem.local_slam_pose_translation_weight = <span class="number">1e5</span></span><br><span class="line">POSE_GRAPH.optimization_problem.local_slam_pose_rotation_weight = <span class="number">1e1</span></span><br><span class="line">POSE_GRAPH.optimization_problem.odometry_translation_weight = <span class="number">1e5</span></span><br><span class="line">POSE_GRAPH.optimization_problem.odometry_rotation_weight = <span class="number">1e1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> options</span><br></pre></td></tr></table></figure>
+
+<h5 id="（6）坐标变换启动节点后有时可以有时未变换"><a href="#（6）坐标变换启动节点后有时可以有时未变换" class="headerlink" title="（6）坐标变换启动节点后有时可以有时未变换"></a>（6）坐标变换启动节点后有时可以有时未变换</h5><p><img src="/home/wangbei/.config/Typora/typora-user-images/image-20240612171831094.png" alt="image-20240612171831094"></p>
+<h5 id="（7）调试时再次出现queue-waiting-for-data"><a href="#（7）调试时再次出现queue-waiting-for-data" class="headerlink" title="（7）调试时再次出现queue waiting for data"></a>（7）调试时再次出现queue waiting for data</h5><p>问题原因：TF转换出现错误或是remapping值不对</p>
+<p>解决方法：调整TF坐标系</p>
+<h5 id="（8）imu打开时会旋转会转出地面点"><a href="#（8）imu打开时会旋转会转出地面点" class="headerlink" title="（8）imu打开时会旋转会转出地面点"></a>（8）imu打开时会旋转会转出地面点</h5><h5 id="（9）odom坐标系不在原点"><a href="#（9）odom坐标系不在原点" class="headerlink" title="（9）odom坐标系不在原点"></a>（9）odom坐标系不在原点</h5><h3 id="3、深度相机点云3d建图"><a href="#3、深度相机点云3d建图" class="headerlink" title="3、深度相机点云3d建图"></a>3、深度相机点云3d建图</h3><h4 id="参数配置-1"><a href="#参数配置-1" class="headerlink" title="参数配置"></a>参数配置</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//backpack_3d.launch.py</span></span><br><span class="line">remappings = [</span><br><span class="line">        (<span class="string">&#x27;/points2_1&#x27;</span>, <span class="string">&#x27;/front_tof_flood_sensor/points&#x27;</span>),</span><br><span class="line">        (<span class="string">&#x27;/points2_2&#x27;</span>, <span class="string">&#x27;/back_tof_flood_sensor/points&#x27;</span>)],</span><br></pre></td></tr></table></figure>
+
+<h4 id="产生问题-1"><a href="#产生问题-1" class="headerlink" title="产生问题"></a>产生问题</h4><h5 id="（1）建图只可以看到墙壁，地面不变成白色"><a href="#（1）建图只可以看到墙壁，地面不变成白色" class="headerlink" title="（1）建图只可以看到墙壁，地面不变成白色"></a>（1）建图只可以看到墙壁，地面不变成白色</h5><h2 id="三、定位精度评估"><a href="#三、定位精度评估" class="headerlink" title="三、定位精度评估"></a>三、定位精度评估</h2><h3 id="1、下载EVO"><a href="#1、下载EVO" class="headerlink" title="1、下载EVO"></a>1、下载EVO</h3><p>（1）二进制安装</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install evo --upgrade --no-binary evo</span><br></pre></td></tr></table></figure>
+
+<p>（2）源码安装</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/MichaelGrupp/evo</span><br><span class="line">cd evo</span><br><span class="line">pip install --user . --upgrade</span><br></pre></td></tr></table></figure>
+
+<h3 id="2、调用方法"><a href="#2、调用方法" class="headerlink" title="2、调用方法"></a>2、调用方法</h3><p>（1）首先打开位姿发布，会发布话题  &#x2F;tracker_pose</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">publish_tracked_pose = <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>（2）在gazebo中加入仿真插件。在world.sdf中利用libgazebo_ros_p3d.so插件获得位姿真值</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;plugin name=&quot;p3d_base_controller&quot; filename=&quot;libgazebo_ros_p3d.so&quot;&gt;</span><br><span class="line">        &lt;always_on&gt;1&lt;/always_on&gt;</span><br><span class="line">        &lt;ros&gt;</span><br><span class="line">          &lt;remapping&gt;odom:=groundtruth&lt;/remapping&gt;</span><br><span class="line">        &lt;/ros&gt;</span><br><span class="line">        &lt;update_rate&gt;200&lt;/update_rate&gt;</span><br><span class="line">        &lt;body_name&gt;base_link&lt;/body_name&gt;</span><br><span class="line">        &lt;gaussian_noise&gt;0&lt;/gaussian_noise&gt;</span><br><span class="line">        &lt;frame_name&gt;map&lt;/frame_name&gt;</span><br><span class="line">        &lt;xyz_offset&gt;0 0 0&lt;/xyz_offset&gt;</span><br><span class="line">        &lt;rpy_offset&gt;0 0 0&lt;/rpy_offset&gt;</span><br><span class="line">&lt;/plugin&gt;</span><br></pre></td></tr></table></figure>
+
+<p>（3）构建node节点，保存里程计轨迹</p>
+<p>a.在自己空间的src文件夹下，创建一个包</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ros2 pkg create evo_odom_save_cpp --build-type ament_cmake --dependencies rclcpp</span><br></pre></td></tr></table></figure>
+
+<p>b.创建节点</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//odom_save.cpp</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;rclcpp/rclcpp.hpp&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;nav_msgs/msg/odometry.hpp&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;geometry_msgs/msg/pose_stamped.hpp&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line">string GT_file = <span class="string">&quot;/home/wangbei/txt/Ground_Truth.txt&quot;</span>;</span><br><span class="line">string Carto_file = <span class="string">&quot;/home/wangbei/txt/Carto.txt&quot;</span>;</span><br><span class="line">fstream gt_file, carto_file;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">gt_handler</span><span class="params">(<span class="type">const</span> nav_msgs::msg::Odometry::SharedPtr msg)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">static</span> <span class="type">int</span> flag = <span class="number">1</span>;</span><br><span class="line">    <span class="type">static</span> <span class="type">double</span> stamp_init;</span><br><span class="line">    <span class="keyword">if</span> (flag == <span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        stamp_init = msg-&gt;header.stamp.sec + msg-&gt;header.stamp.nanosec * <span class="number">1e-9</span>;</span><br><span class="line">        flag = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    gt_file &lt;&lt; fixed &lt;&lt; msg-&gt;header.stamp.sec + msg-&gt;header.stamp.nanosec * <span class="number">1e-9</span> - stamp_init &lt;&lt; <span class="string">&quot; &quot;</span></span><br><span class="line">            &lt;&lt; msg-&gt;pose.pose.position.x &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; msg-&gt;pose.pose.position.y &lt;&lt; <span class="string">&quot; &quot;</span></span><br><span class="line">            &lt;&lt; msg-&gt;pose.pose.position.z &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; msg-&gt;pose.pose.orientation.x &lt;&lt; <span class="string">&quot; &quot;</span></span><br><span class="line">            &lt;&lt; msg-&gt;pose.pose.orientation.y &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; msg-&gt;pose.pose.orientation.z &lt;&lt; <span class="string">&quot; &quot;</span></span><br><span class="line">            &lt;&lt; msg-&gt;pose.pose.orientation.w &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">carto_handler</span><span class="params">(<span class="type">const</span> geometry_msgs::msg::PoseStamped::SharedPtr msg)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">static</span> <span class="type">int</span> flag = <span class="number">1</span>;</span><br><span class="line">    <span class="type">static</span> <span class="type">double</span> stamp_init;</span><br><span class="line">    <span class="keyword">if</span> (flag == <span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        stamp_init = msg-&gt;header.stamp.sec + msg-&gt;header.stamp.nanosec * <span class="number">1e-9</span>;</span><br><span class="line">        flag = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    carto_file &lt;&lt; fixed &lt;&lt; msg-&gt;header.stamp.sec + msg-&gt;header.stamp.nanosec * <span class="number">1e-9</span> - stamp_init &lt;&lt; <span class="string">&quot; &quot;</span></span><br><span class="line">              &lt;&lt; msg-&gt;pose.position.x &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; msg-&gt;pose.position.y &lt;&lt; <span class="string">&quot; &quot;</span></span><br><span class="line">              &lt;&lt; msg-&gt;pose.position.z &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; msg-&gt;pose.orientation.x &lt;&lt; <span class="string">&quot; &quot;</span></span><br><span class="line">              &lt;&lt; msg-&gt;pose.orientation.y &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; msg-&gt;pose.orientation.z &lt;&lt; <span class="string">&quot; &quot;</span></span><br><span class="line">              &lt;&lt; msg-&gt;pose.orientation.w &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> **argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    rclcpp::<span class="built_in">init</span>(argc, argv);</span><br><span class="line">    <span class="keyword">auto</span> node = rclcpp::Node::<span class="built_in">make_shared</span>(<span class="string">&quot;odom2txt2&quot;</span>);</span><br><span class="line"></span><br><span class="line">    gt_file.<span class="built_in">open</span>(GT_file, ios::out);</span><br><span class="line">    carto_file.<span class="built_in">open</span>(Carto_file, ios::out);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">auto</span> gt_sub = node-&gt;<span class="built_in">create_subscription</span>&lt;nav_msgs::msg::Odometry&gt;(<span class="string">&quot;/groundtruth&quot;</span>, <span class="number">200</span>, &amp;gt_handler);</span><br><span class="line">    <span class="keyword">auto</span> carto_sub = node-&gt;<span class="built_in">create_subscription</span>&lt;geometry_msgs::msg::PoseStamped&gt;(<span class="string">&quot;/tracked_pose&quot;</span>, <span class="number">200</span>, &amp;carto_handler);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">RCLCPP_INFO</span>(node-&gt;<span class="built_in">get_logger</span>(), <span class="string">&quot;\033[1;32m----&gt; odom2txt start.\033[0m&quot;</span>);</span><br><span class="line">    rclcpp::<span class="built_in">spin</span>(node);</span><br><span class="line"></span><br><span class="line">    gt_file.<span class="built_in">close</span>();</span><br><span class="line">    carto_file.<span class="built_in">close</span>();</span><br><span class="line"></span><br><span class="line">    rclcpp::<span class="built_in">shutdown</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>c.添加依赖项</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//CMakeLists.txt</span><br><span class="line">find_package(nav_msgs REQUIRED)</span><br><span class="line">find_package(geometry_msgs REQUIRED)</span><br><span class="line"></span><br><span class="line">add_executable(odom2txt2 src/odom_save.cpp)</span><br><span class="line">ament_target_dependencies(odom2txt2 rclcpp nav_msgs)</span><br><span class="line"></span><br><span class="line">install(TARGETS</span><br><span class="line">  odom2txt2</span><br><span class="line">  DESTINATION lib/$&#123;PROJECT_NAME&#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//package.xml</span><br><span class="line"><span class="tag">&lt;<span class="name">depend</span>&gt;</span>nav_msgs<span class="tag">&lt;/<span class="name">depend</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">depend</span>&gt;</span>geometry_msgs<span class="tag">&lt;/<span class="name">depend</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>d.建立txt文件夹，并在文件夹下添加Ground_Truth.txt和Carto.txt</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir ~/txt</span><br><span class="line">touch ~/txt/Ground_Truth.txt</span><br><span class="line">touch ~/txt/Carto.txt</span><br></pre></td></tr></table></figure>
+
+<p>（4）运行node节点，结束后利用evo计算</p>
+<p>a.启动节点</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ros2 run evo_odom_save odom2txt2</span><br></pre></td></tr></table></figure>
+
+<p>b.利用evo计算绝对位姿误差</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">evo_ape tum Ground_Truth.txt Carto.txt -as --plot --plot_mode xyz --save_plot ./CARTO_apeplot --save_results ./CARTO_ape.zip</span><br></pre></td></tr></table></figure>
+
+<h3 id="3、参考文件"><a href="#3、参考文件" class="headerlink" title="3、参考文件"></a>3、参考文件</h3><p>1、<a target="_blank" rel="noopener" href="https://blog.csdn.net/zhaohaowu/article/details/125340231">https://blog.csdn.net/zhaohaowu/article/details/125340231</a></p>
+<p>2、<a target="_blank" rel="noopener" href="https://blog.csdn.net/hanmoge/article/details/113593380?spm=a2c6h.12873639.article-detail.7.3e8a2d54FanjXK&utm_medium=distribute.pc_aggpage_search_result.none-task-blog-2~aggregatepage~first_rank_ecpm_v1~rank_v31_ecpm-2-113593380.pc_agg_new_rank&utm_term=gazebo%E8%8E%B7%E5%8F%96%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%BD%8D%E7%BD%AE">https://blog.csdn.net/hanmoge/article/details/113593380?spm=a2c6h.12873639.article-detail.7.3e8a2d54FanjXK&amp;utm_medium=distribute.pc_aggpage_search_result.none-task-blog-2~aggregatepage~first_rank_ecpm_v1~rank_v31_ecpm-2-113593380.pc_agg_new_rank&amp;utm_term=gazebo%E8%8E%B7%E5%8F%96%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%BD%8D%E7%BD%AE</a></p>
+<p>3、<a target="_blank" rel="noopener" href="https://github.com/ros-simulation/gazebo_ros_pkgs/tree/noetic-devel/gazebo_plugins/include/gazebo_plugins">https://github.com/ros-simulation/gazebo_ros_pkgs/tree/noetic-devel/gazebo_plugins/include/gazebo_plugins</a></p>
+<h3 id="4、cartographer精度调试"><a href="#4、cartographer精度调试" class="headerlink" title="4、cartographer精度调试"></a>4、cartographer精度调试</h3><p>作用较大的参数，显著提高定位精度</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TRAJECTORY_BUILDER_2D.adaptive_voxel_filter.min_num_points = 250</span><br></pre></td></tr></table></figure>
+
+<p>urdf文件中pose与sdf文件中pose不匹配</p>
+<p>sdf中深度相机插件未写明min_range和max_range两个参数</p>
+<h2 id="四、地图精度评估"><a href="#四、地图精度评估" class="headerlink" title="四、地图精度评估"></a>四、地图精度评估</h2><p>度量标准包括RMSE、准确度（平均误差）、精密度（标准差）、完整性（重叠率）、倒角距离（CD）和F1分数，所有级别为 ‘1&#x2F;2&#x2F;5&#x2F;10&#x2F;20’ cm。对于那些没有地面实况图的，我们使用平均图熵（MME）</p>
+<h2 id="（一）Cloud-Map-Evaluation-不好用"><a href="#（一）Cloud-Map-Evaluation-不好用" class="headerlink" title="（一）Cloud_Map_Evaluation 不好用"></a>（一）Cloud_Map_Evaluation 不好用</h2><h3 id="1、安装open3d（-0-11）"><a href="#1、安装open3d（-0-11）" class="headerlink" title="1、安装open3d（&gt;&#x3D;0.11）"></a>1、安装open3d（&gt;&#x3D;0.11）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/isl-org/Open3D.git</span><br><span class="line">util/install_deps_ubuntu.sh</span><br></pre></td></tr></table></figure>
+
+<p><strong>ERROR_1：报错显示无法连接，根据提示手动安装依赖</strong></p>
+<blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt install xorg-dev libxcb-shm0 libglu1-mesa-dev python3-dev clang libc++-dev libc++abi-dev libsdl2-dev ninja-build libxi-dev libtbb-dev libosmesa6-dev libudev-dev autoconf libtool</span><br></pre></td></tr></table></figure>
+
+<p>编译</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> build</span><br><span class="line"><span class="built_in">cd</span> build</span><br><span class="line">cmake ..</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><strong>ERROR_2：Fetching ISPC compiler卡住不动</strong></p>
+<blockquote>
+<p>修改CmakeList.txt，具体：找到‘Build_ISPC_MODULE’选项，修改其if语句下的值为OFF；该值默认为ON。</p>
+</blockquote>
+<p><strong>ERROR_3：cmake后出现依赖无法下载</strong></p>
+<blockquote>
+<p>可以下载下载好的第三方库，再根据报错，找到对应的依赖，下载后手动放入3rdparty_downloads文件夹中</p>
+<p>1、第三方库<a target="_blank" rel="noopener" href="https://download.csdn.net/download/weixin_44044411/87387272?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522171860561016800227470157%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fdownload.%2522%257D&request_id=171860561016800227470157&biz_id=1&utm_medium=distribute.pc_search_result.none-task-download-2~download~first_rank_ecpm_v1~rank_v31_ecpm-3-87387272-null-null.269">https://download.csdn.net/download/weixin_44044411/87387272?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522171860561016800227470157%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fdownload.%2522%257D&amp;request_id=171860561016800227470157&amp;biz_id=1&amp;utm_medium=distribute.pc_search_result.none-task-download-2~download~first_rank_ecpm_v1~rank_v31_ecpm-3-87387272-null-null.269</a></p>
+<p>2、根据对应网址手动下载，比如</p>
+<p><img src="/home/wangbei/.config/Typora/typora-user-images/image-20240617162028679.png" alt="image-20240617162028679"></p>
+</blockquote>
+<p><strong>ERROR_4</strong>:CMake Error at cmake_install.cmake:46 (file): file INSTALL cannot copy file</p>
+<blockquote>
+<p>安装共享库有时需要root密码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> make install</span><br></pre></td></tr></table></figure>
+
+<p>输入root密码后，安装成功</p>
+</blockquote>
+<h3 id="2、安装cloud-map-eval"><a href="#2、安装cloud-map-eval" class="headerlink" title="2、安装cloud_map_eval"></a>2、安装cloud_map_eval</h3><p>下载pcd放入dataset中，并根据名字修改cpp文件读取路径</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/JokerJohn/Cloud_Map_Evaluation.git</span><br><span class="line"><span class="built_in">cd</span> Cloud_Map_Evaluation/cloud_map_evaluation &amp;&amp; <span class="built_in">mkdir</span> build</span><br><span class="line">cmake ..</span><br><span class="line">make</span><br></pre></td></tr></table></figure>
+
+<h3 id="3、运行cloud-map-eval"><a href="#3、运行cloud-map-eval" class="headerlink" title="3、运行cloud_map_eval"></a>3、运行cloud_map_eval</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./cloud_map_eval</span><br></pre></td></tr></table></figure>
+
+<p>![截图 2024-06-18 10-16-20](&#x2F;home&#x2F;wangbei&#x2F;Cloud_Map_Evaluation&#x2F;cloud_map_evaluation&#x2F;dataset&#x2F;MCR_slow&#x2F;截图 2024-06-18 10-16-20.png)</p>
+<h2 id="（二）gazebo-map-creator-可以获得真值图"><a href="#（二）gazebo-map-creator-可以获得真值图" class="headerlink" title="（二）gazebo_map_creator 可以获得真值图"></a>（二）gazebo_map_creator 可以获得真值图</h2><h3 id="1、安装依赖"><a href="#1、安装依赖" class="headerlink" title="1、安装依赖"></a>1、安装依赖</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt-get install libboost-dev libpcl-dev</span><br></pre></td></tr></table></figure>
+
+<h3 id="2、编译"><a href="#2、编译" class="headerlink" title="2、编译"></a>2、编译</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> /opt/ros/humble/setup.bash</span><br><span class="line"><span class="built_in">mkdir</span> -p robot_ws/src</span><br><span class="line"><span class="built_in">cd</span> robot_ws/src</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/arshadlab/gazebo_map_creator.git</span><br><span class="line"><span class="built_in">cd</span> ..</span><br><span class="line">rosdep install --from-paths src --ignore-src -r -y</span><br><span class="line">colcon build --symlink-install</span><br><span class="line"><span class="built_in">source</span> /install/setup.bash</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>**ERROR 1: <strong><strong><strong>colcon build时出现1 package had stderr output: gazebo_map_creator</strong></strong></strong></p>
+<p>解决方法：注意这里终端的启动位置，从home启动终端，重新运行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/robot_ws &amp;&amp; colcon build --symlink-install</span><br></pre></td></tr></table></figure></blockquote>
+<h3 id="3、运行"><a href="#3、运行" class="headerlink" title="3、运行"></a>3、运行</h3><p>将world文件复制到~&#x2F;robot_ws&#x2F;src&#x2F;gazebo_map_creator&#x2F;gazebo_map_creator_ign&#x2F;world中</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">source</span> ./install/setup.bash</span><br><span class="line">$ gazebo -s libgazebo_map_creator.so demo.world</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">source</span> ./install/setup.bash</span><br><span class="line">$ ros2 run gazebo_map_creator request_map.py -c <span class="string">&#x27;(-9.0,-10.0,0.5)(3.0,-2.0,1.2)&#x27;</span> -r 0.05 -f <span class="variable">$PWD</span>/map1 --skip-vertical-scan</span><br><span class="line">$ ros2 run gazebo_map_creator request_map.py -c <span class="string">&#x27;(-9.0,-10.0,0.5)(3.0,-2.0,2.0)&#x27;</span> -r 0.05 -f <span class="variable">$PWD</span>/map --skip-vertical-scan</span><br></pre></td></tr></table></figure>
+
+<h3 id="4、参数意义"><a href="#4、参数意义" class="headerlink" title="4、参数意义"></a>4、参数意义</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-c 拐角 右下角和左上角（右下角、左上角）x朝上，y朝左（默认值：（-10.0、-10.0、0.05）（10.0,10.0、10.0））</span><br><span class="line">-r 分辨率</span><br><span class="line">-d 地图创建过程中使用碰撞距离</span><br><span class="line">--skip-vertical-scan 跳过全扫描获得更快结果</span><br><span class="line">-t 2d地图中的像素阈值 </span><br><span class="line">-f 文件名</span><br></pre></td></tr></table></figure>
+
+<h2 id="（三）手动计算"><a href="#（三）手动计算" class="headerlink" title="（三）手动计算"></a>（三）手动计算</h2><p> <a href="%E5%9C%B0%E5%9B%BE%E7%B2%BE%E5%BA%A6%E8%AF%84%E4%BC%B0.pptx">地图精度评估.pptx</a> </p>
+<h2 id="五、gazebo源码安装"><a href="#五、gazebo源码安装" class="headerlink" title="五、gazebo源码安装"></a>五、gazebo源码安装</h2><p> [Gazebo - Tutorial - Installing gazebo_ros_pkgs (ROS 2).pdf](..&#x2F;下载&#x2F;Gazebo - Tutorial - Installing gazebo_ros_pkgs (ROS 2).pdf) </p>
+<h3 id="1、安装时出现的报错"><a href="#1、安装时出现的报错" class="headerlink" title="1、安装时出现的报错"></a>1、安装时出现的报错</h3><p><strong>ERROR1：找不到命令 “vcs</strong></p>
+<blockquote>
+<p>解决方案：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt install  python3-vcstool</span><br></pre></td></tr></table></figure></blockquote>
+<p><strong>ERROR2：vcs import src &lt; gazebo_ros_pkgs.repos报错</strong></p>
+<blockquote>
+<p><img src="/home/wangbei/.config/Typora/typora-user-images/image-20240620095641346.png" alt="image-20240620095641346"></p>
+<p>打开repo文件，根据网址进入vision_opencv发现无ros2分支</p>
+<p>解决方法：修改为vision：humble</p>
+<p><img src="/home/wangbei/.config/Typora/typora-user-images/image-20240620100613136.png" alt="image-20240620100613136"></p>
+<p>或直接到git上克隆到src文件夹中</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/ros-simulation/gazebo_ros_pkgs.git -b ros2</span><br><span class="line"></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/ros-perception/vision_opencv.git -b humble</span><br></pre></td></tr></table></figure></blockquote>
+<p><strong>ERROR3：编译gazebo_plungins时电脑自动重启了</strong></p>
+<p><strong>ERROR4：出现stderr output错误查看为EasyInstallDeprecationWarning: easy_install command is deprecated.</strong></p>
+<blockquote>
+<p><img src="/home/wangbei/.config/Typora/typora-user-images/image-20240620104430985.png" alt="image-20240620104430985"></p>
+<p>解决方法：报错的路径是&#x2F;usr&#x2F;lib&#x2F;python3&#x2F;dist-packages中的setuptools，版本是setuptools-59.6.0.egg-info，这个版本不支持easy_install了。所以安装这个版本58.2.0。就不报错了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pip install setuptools==58.2.0 --target=/usr/lib/python3/dist-packages --upgrade</span><br></pre></td></tr></table></figure></blockquote>
+<h3 id="2、修改gazebo源码，为相机点云加噪声"><a href="#2、修改gazebo源码，为相机点云加噪声" class="headerlink" title="2、修改gazebo源码，为相机点云加噪声"></a>2、修改gazebo源码，为相机点云加噪声</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">double</span> gaussian_noise_;</span><br><span class="line"><span class="keyword">if</span> (!_sdf-&gt;<span class="built_in">HasElement</span>(<span class="string">&quot;gaussian_noise&quot;</span>)) &#123;</span><br><span class="line">    <span class="built_in">RCLCPP_DEBUG</span>(impl_-&gt;ros_node_-&gt;<span class="built_in">get_logger</span>(), <span class="string">&quot;Missing &lt;gassian_noise&gt;, defaults to 0.0&quot;</span>);</span><br><span class="line">    impl_-&gt;gaussian_noise_ = <span class="number">0</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    impl_-&gt;gaussian_noise_ = _sdf-&gt;<span class="built_in">GetElement</span>(<span class="string">&quot;gaussian_noise&quot;</span>)-&gt;<span class="built_in">Get</span>&lt;<span class="type">double</span>&gt;();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">depth = depth + ignition::math::Rand::<span class="built_in">DblNormal</span>(<span class="number">0</span>, impl_-&gt;gaussian_noise_*depth);</span><br><span class="line"></span><br><span class="line">&lt;gaussian_noise&gt;<span class="number">0.001</span>&lt;/gaussian_noise&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3、加入噪声后，cartographer定位精度调试"><a href="#3、加入噪声后，cartographer定位精度调试" class="headerlink" title="3、加入噪声后，cartographer定位精度调试"></a>3、加入噪声后，cartographer定位精度调试</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">TRAJECTORY_BUILDER_2D.submaps.range_data_inserter.probability_grid_range_data_inserter.hit_probability = <span class="number">0.52</span></span><br><span class="line">TRAJECTORY_BUILDER_2D.submaps.range_data_inserter.probability_grid_range_data_inserter.miss_probability = <span class="number">0.495</span></span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http:/wangbeiabcd.github.io/myblog.github.io2025/05/09/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wangbei Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="2025/05/09/hello-world/" itemprop="url">Hello World</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2025-05-09T14:37:46+08:00">
+                2025-05-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
-  {% include '_partials/pagination.swig' %}
-{% endblock %}
+  
 
-{% block sidebar %}
-  {{ sidebar_template.render(false) }}
-{% endblock %}
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Wang Bei</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
